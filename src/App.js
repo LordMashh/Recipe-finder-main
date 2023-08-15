@@ -4,9 +4,9 @@ import SearchBar from './Components/SearchBar';
 import RecipeDetailsCard from './Components/RecipeDetailsCard';
 import './index.css'
 
-const API_KEY = '4827f9c72emshb0fa9bb9ddf629bp1a89d7jsn7de384a702be';
-const API_HOST = 'recipe-by-api-ninjas.p.rapidapi.com';
-const API_URL = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe';
+const API_KEY = process.env.REACT_APP_API_KEY;
+const API_HOST = process.env.REACT_APP_API_HOST;
+const API_URL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
