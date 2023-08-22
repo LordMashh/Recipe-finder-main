@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 const SearchBar = ({ onSearch, setSearchQuery }) => {
   const [query, setQuery] = useState('');
-
+  
   const handleSearch = () => {
+    
     setSearchQuery(query); // Set search query in the parent component
     onSearch(); // Trigger the search in the parent component
   };
@@ -16,6 +17,11 @@ const SearchBar = ({ onSearch, setSearchQuery }) => {
         placeholder="Search for recipes here..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyUpCapture={(e)=>{
+          if (e.key === 'Enter') {
+            handleSearch();
+        }
+        }}
       />
       <button
         className="bg-blue-500 text-white font-semibold px-4 py-2 rounded hover:bg-blue-600"
